@@ -6,13 +6,14 @@ Di Post Test 3 ini ada beberapa tambahan yaitu
 - Tambahaan 2 Class yaitu KonserEvent dan PrivateKonser
 
   Class Event berfungsi sebagai SuperClass
+```java
   package models;
 
 public class Event {
     private String nama;
     private String tanggal;
     private String venue;
-```java
+
     public Event(String nama, String tanggal, String venue) {
         this.nama = nama;
         this.tanggal = tanggal;
