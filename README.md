@@ -136,10 +136,15 @@ public class PrivateKonser extends Event {
 - Method tampilkanInfo() menambahkan informasi kapasitas ke output.
 
 Dokumentasi Program
+
+
+
 <img width="318" height="249" alt="Screenshot 2025-09-21 200631" src="https://github.com/user-attachments/assets/62b0fb1b-c328-4b07-b2b7-eef71ba37099" />
 
 
+
 <img width="303" height="246" alt="Screenshot 2025-09-21 200635" src="https://github.com/user-attachments/assets/e9a6dac2-4465-4a18-9f7f-51a68e9478f1" />
+
 
 
 <img width="239" height="195" alt="Screenshot 2025-09-21 200641" src="https://github.com/user-attachments/assets/ea7d8947-f8d9-40e1-8953-de60f34544d8" />
