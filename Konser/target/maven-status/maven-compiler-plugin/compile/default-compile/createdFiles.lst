@@ -1,0 +1,6 @@
+com\mycompany\konser\Konser.class
+models\Event.class
+service\EventService.class
+models\KonserEvent.class
+models\Reservasi.class
+models\PrivateKonser.class
