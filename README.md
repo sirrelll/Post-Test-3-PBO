@@ -10,9 +10,12 @@ Dan saya mengembangkan CRUD & ORM sesuai dengan ketentuan di Goggle CLassroom
 <img width="237" height="73" alt="Screenshot 2025-10-10 143056" src="https://github.com/user-attachments/assets/6230bd09-1c1f-4612-af7b-eec8226eaf5a" />
 
 
-Data yang sudah ada di database.
+
+**Data yang sudah ada di database.**
 <img width="1019" height="334" alt="Screenshot 2025-10-09 234159" src="https://github.com/user-attachments/assets/9c5ff352-c5d4-44b7-a7b8-866110b2839b" />
 
+
+**Penerapan JDBC**
 ```java
 package models;
 
@@ -42,8 +45,52 @@ public class Database {
     }
 
 }
- ```
+```
+Dengan menyesuaikan dengan nama Database maka akan terhubung dari Project nya ke NetBeans sehingga JDBC telah diterapkan, Dan juga ada penerapan JDBC di class EventService sebagai penghubung koneksi ke MySQL, kirim query ke SQL.
 
+**Penerapan ORM**
+```java
+while (rs.next()) {
+    int id = rs.getInt("id");
+    String nama = rs.getString("nama_konser");
+    String tanggal = rs.getString("tanggal");
+    String venue = rs.getString("venue");
+
+    String jenis = rs.getString("jenis");
+
+    if (jenis != null && jenis.equalsIgnoreCase("private")) {
+        int kapasitas = rs.getInt("kapasitas");
+        PrivateKonser pk = new PrivateKonser(id, nama, tanggal, venue, kapasitas);
+        daftarEvent.add(pk);   // <-- Mapping ke objek Java
+    } else {
+        String artis = rs.getString("artis");
+        KonserEvent ke = new KonserEvent(id, nama, tanggal, venue, artis);
+        daftarEvent.add(ke);   // <-- Mapping ke objek Java
+    }
+}
+```
+Diatas adalah salah satu contoh penerapan ORM yang ada di Class EventService yang berfungsi sebagai membaca tabel konser di database MySQL
+lalu mengubah setiap baris data (row) menjadi objek Java (PrivateKonser atau KonserEvent).
+
+**Demonstrasi Program**
+
+
+<img width="592" height="320" alt="Screenshot 2025-10-10 151319" src="https://github.com/user-attachments/assets/ae7afc80-b5ec-4e6f-948b-f20e8812b8a2" />
+
+
+<img width="979" height="289" alt="Screenshot 2025-10-10 151412" src="https://github.com/user-attachments/assets/e2e6d1c0-a869-40b2-b437-d2fa86852d2f" />
+
+
+<img width="508" height="349" alt="Screenshot 2025-10-10 151748" src="https://github.com/user-attachments/assets/8a14fbbb-8201-4de5-a72d-5cddc0eeeab4" />
+
+
+<img width="987" height="316" alt="Screenshot 2025-10-10 151806" src="https://github.com/user-attachments/assets/8139b7ea-d63c-420a-b128-550d43daf595" />
+
+
+<img width="576" height="263" alt="Screenshot 2025-10-10 151822" src="https://github.com/user-attachments/assets/67a4fd4a-c5ab-48db-a342-be6a5e481642" />
+
+
+<img width="927" height="274" alt="Screenshot 2025-10-10 151831" src="https://github.com/user-attachments/assets/7eee6759-3a1d-46af-8a6d-4e200d11e9f8" />
 
 
 # Post Test 4 PBO
