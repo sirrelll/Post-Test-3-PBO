@@ -1,5 +1,48 @@
 # Darel Prasetya Fawwaz | 2409116064 | Sistem Informasi B 24
 ================================================================
+# Post Test 5 PBO
+Di Post Test 5 ini saya membuat class tambahan yaitu Database sebagia penghubung ke SQL Database,
+Dan saya mengembangkan CRUD & ORM sesuai dengan ketentuan di Goggle CLassroom
+*Pembuatan Database*
+<img width="237" height="73" alt="Screenshot 2025-10-10 143056" src="https://github.com/user-attachments/assets/6230bd09-1c1f-4612-af7b-eec8226eaf5a" />
+
+
+Data yang sudah ada di database.
+<img width="1019" height="334" alt="Screenshot 2025-10-09 234159" src="https://github.com/user-attachments/assets/9c5ff352-c5d4-44b7-a7b8-866110b2839b" />
+
+```java
+package models;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class Database {
+
+    private final static String DB_HOST = "localhost";
+    private final static String DB_NAME = "konserdb";
+    private final static String DB_USERNAME = "root";
+    private final static String DB_PASSWORD = ""; 
+
+    public Database() {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            System.out.println("Driver loaded!");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Failed to load driver: " + e.getMessage());
+        }
+    }
+
+    public static Connection connect() throws SQLException {
+        String url = "jdbc:mysql://" + DB_HOST + "/" + DB_NAME;
+        return DriverManager.getConnection(url, DB_USERNAME, DB_PASSWORD);
+    }
+
+}
+ ```
+
+
+
 # Post Test 4 PBO
 
 Di Post Test 4 ini saya melakukan beberapa tambahan sesuai dengan ketentuan di Goggle Classroom:
